@@ -26,7 +26,7 @@ export default function Listtour() {
     }
   };
   const maxDate = (e) => {
-    if (e) {
+    if (e && e.length) {
       var ngayMax = formatdate(e[0].ngay);
       for (let i = 0; i < e.length; i++) {
         if (ngayMax <= formatdate(e[i].ngay)) {

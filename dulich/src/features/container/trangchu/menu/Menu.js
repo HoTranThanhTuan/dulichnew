@@ -357,7 +357,7 @@ function ListMenu(props) {
                                 Khách sạn
                             </Linkrt>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Linkrt
                                 className="nav-link"
                                 activeclassName="active"
@@ -369,7 +369,7 @@ function ListMenu(props) {
                             >
                                 Khách sạn
                             </Linkrt>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <Link
                                 className="nav-link"

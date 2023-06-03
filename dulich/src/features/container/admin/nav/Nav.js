@@ -81,9 +81,9 @@ export default function Nav() {
 
   const quanlytour = (
     <div>
-    <Route exact path={match.path}>
+    {/* <Route exact path={match.path}>
       <Doanhthu />
-    </Route>
+    </Route> */}
     <Route exact path={`${match.path}/chiphi`}>
       <Chiphi url={match.url} />
     </Route>
@@ -403,8 +403,21 @@ export default function Nav() {
   );
   const menu_quanlytour = (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
-      
-     <Menu.Item
+      <Menu.Item
+        key="21"
+        icon={
+          state.collapsed === true ? (
+            <span className="fas fa-check-double"></span>
+          ) : (
+            <span className="fas fa-check-double"></span>
+          )
+        }
+      >
+        <Link to={`${match.url}/kiemduyet`}>
+          Kiểm duyệt tour {counthoadon === 0 ? "" : <Badge status="error" />}
+        </Link>
+      </Menu.Item>
+     {/* <Menu.Item
         key="19"
         icon={
           state.collapsed === true ? (
@@ -415,7 +428,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/chiphi`}>Chi phí</Link>
-      </Menu.Item>
+      </Menu.Item> */}
      
      <Menu.Item
         key="2"
@@ -442,7 +455,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/tintuc`}>Quản lý tin tức</Link>
       </Menu.Item>
-     <Menu.Item
+     {/* <Menu.Item
         key="5"
         icon={
           state.collapsed === true ? (
@@ -453,8 +466,8 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/quocgia`}>Quản lý quốc gia</Link>
-      </Menu.Item>
-     <Menu.Item
+      </Menu.Item> */}
+     {/* <Menu.Item
         key="6"
         icon={
           state.collapsed === true ? (
@@ -465,8 +478,8 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/loaitour`}>Quản lý loại tour</Link>
-      </Menu.Item>
-      <Menu.Item
+      </Menu.Item> */}
+      {/* <Menu.Item
         key="7"
         icon={
           state.collapsed === true ? (
@@ -526,7 +539,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/dichvu`}>Quản lý dịch vụ</Link>
-      </Menu.Item>
+      </Menu.Item> */}
       
      <Menu.Item
         key="20"
@@ -541,7 +554,7 @@ export default function Nav() {
         <Link to={`${match.url}/hoadoncanhan`}>Hoá đơn tạo tour</Link>
       </Menu.Item>
      
-     <Menu.Item
+     {/* <Menu.Item
         key="15"
         icon={
           state.collapsed === true ? (
@@ -589,6 +602,18 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/khuyenmai`}>Khuyễn mãi</Link>
+      </Menu.Item> */}
+      <Menu.Item
+        key="13"
+        icon={
+          state.collapsed === true ? (
+            <span className="fas fa-file-alt"></span>
+          ) : (
+            <span className="fas fa-file-alt mr-2"></span>
+          )
+        }
+      >
+        <Link to={`${match.url}/hoadon`}>Quản lý hoá đơn</Link>
       </Menu.Item>
     </Menu>
   );
@@ -606,7 +631,7 @@ export default function Nav() {
       >
         <Link to="/admin">Doanh thu</Link>
       </Menu.Item>
-      {/* <Menu.Item
+      <Menu.Item
         key="19"
         icon={
           state.collapsed === true ? (
@@ -617,8 +642,8 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/chiphi`}>Chi phí</Link>
-      </Menu.Item> */}
-      <Menu.Item
+      </Menu.Item>
+      {/* <Menu.Item
         key="21"
         icon={
           state.collapsed === true ? (
@@ -631,7 +656,7 @@ export default function Nav() {
         <Link to={`${match.url}/kiemduyet`}>
           Kiểm duyệt tour {counthoadon === 0 ? "" : <Badge status="error" />}
         </Link>
-      </Menu.Item>
+      </Menu.Item> */}
       {/* <Menu.Item
         key="2"
         icon={
@@ -668,7 +693,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/tintuc`}>Quản lý tin tức</Link>
       </Menu.Item> */}
-      {/* <Menu.Item
+      <Menu.Item
         key="5"
         icon={
           state.collapsed === true ? (
@@ -679,8 +704,8 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/quocgia`}>Quản lý quốc gia</Link>
-      </Menu.Item> */}
-      {/* <Menu.Item
+      </Menu.Item>
+      <Menu.Item
         key="6"
         icon={
           state.collapsed === true ? (
@@ -715,7 +740,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/diadiem`}>Quản lý địa điểm</Link>
-      </Menu.Item> */}
+      </Menu.Item>
       <Menu.Item
         key="9"
         icon={
@@ -728,7 +753,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/binhluan`}>Quản lý bình luận</Link>
       </Menu.Item>
-      {/* <Menu.Item
+      <Menu.Item
         key="10"
         icon={
           state.collapsed === true ? (
@@ -763,7 +788,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/dichvu`}>Quản lý dịch vụ</Link>
-      </Menu.Item> */}
+      </Menu.Item>
       <Menu.Item
         key="13"
         icon={
@@ -776,7 +801,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/hoadon`}>Quản lý hoá đơn</Link>
       </Menu.Item>
-      {/* <Menu.Item
+      <Menu.Item
         key="20"
         icon={
           state.collapsed === true ? (
@@ -787,7 +812,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/hoadoncanhan`}>Hoá đơn tạo tour</Link>
-      </Menu.Item> */}
+      </Menu.Item>
       <Menu.Item
         key="14"
         icon={
@@ -800,7 +825,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/role`}>Quản lý phân quyền</Link>
       </Menu.Item>
-      {/* <Menu.Item
+      <Menu.Item
         key="15"
         icon={
           state.collapsed === true ? (
@@ -848,7 +873,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/khuyenmai`}>Khuyễn mãi</Link>
-      </Menu.Item> */}
+      </Menu.Item>
     </Menu>
   );
   const Menu_Authentication = (role) => {
