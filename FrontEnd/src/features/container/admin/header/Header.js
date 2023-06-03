@@ -218,7 +218,7 @@ function Header(props) {
                         </div>
                         <div className="col-md-6">
                             <p className="mb-2"><span>Trách nhiệm:&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="tt-user">{users ? users.mota : ""}</span></p>
-                            <p className="mb-2"><span>Giám sát:&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="tt-user">Trần Sang</span></p>
+                            <p className="mb-2"><span>Giám sát:&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="tt-user">UTE</span></p>
                         </div>
                         <p className="tab"><span>Kỹ năng:&nbsp;&nbsp;&nbsp;&nbsp;</span><span className="tt-user text-justify">{user.kynang}</span></p>
                     </div>
