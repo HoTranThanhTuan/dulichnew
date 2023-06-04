@@ -120,17 +120,21 @@ function ListMenu(props) {
                     <Linkrt to="/dangnhap">Đăng nhập</Linkrt>
                 </Menu.Item>
             )}
+            {users && 
             <Menu.Item key="2">
                 <span onClick={showDrawer}>Xem thông tin</span>
             </Menu.Item>
+            }
+             {users && 
             <Menu.Item key="4">
                 <Linkrt to="/thongtin/0">Xem lịch sử</Linkrt>
-            </Menu.Item>
+            </Menu.Item>}
+        
             {users ? (
                 phanquyen() ? (
                     <Menu.Item key="3">
                         <Linkrt to="/admin" className="nav-link">
-                            Quản lý admin
+                            Quản lý {users.role}
                         </Linkrt>
                     </Menu.Item>
                 ) : (

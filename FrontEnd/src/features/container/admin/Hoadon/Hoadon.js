@@ -31,10 +31,10 @@ function Hoadon() {
       dataIndex: "tien",
     },
 
-    {
-      title: "Action",
-      dataIndex: "action",
-    },
+    // {
+    //   title: "Action",
+    //   dataIndex: "action",
+    // },
   ];
 
   const hoadons = useSelector((state) => state.hoadons.hoadon.data);
@@ -105,19 +105,19 @@ function Hoadon() {
                   vnđ
                 </span>
               ),
-              action: (
-                <div className="action">
-                  <Popconfirm
-                    title="Bạn có muốn xoá？"
-                    onConfirm={() => {
-                      hangdleDelete(ok.id);
-                    }}
-                    icon={<QuestionCircleOutlined style={{ color: "red" }} />}
-                  >
-                    <i className="far fa-trash-alt"></i>
-                  </Popconfirm>
-                </div>
-              ),
+              // action: (
+              //   <div className="action">
+              //     <Popconfirm
+              //       title="Bạn có muốn xoá？"
+              //       onConfirm={() => {
+              //         hangdleDelete(ok.id);
+              //       }}
+              //       icon={<QuestionCircleOutlined style={{ color: "red" }} />}
+              //     >
+              //       <i className="far fa-trash-alt"></i>
+              //     </Popconfirm>
+              //   </div>
+              // ),
             }))}
           />
         )}

@@ -1,4 +1,4 @@
-import { Carousel, message, Popover, Radio, Rate, Spin } from "antd";
+import { Carousel, DatePicker, message, Popover, Radio, Rate, Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./tour.css";
@@ -92,6 +92,12 @@ function Tour(props) {
             return nam + "-" + thang + "-" + ngay;
         }
     };
+
+    const handleDateChange = (date, dateString) => {
+        setState({ ...state, date: dateString });
+        console.log(state, "state")
+      };
+
     const checkngaydi = () => {
         if (tour.length !== 0) {
             // console.log(tour);
@@ -305,7 +311,6 @@ function Tour(props) {
         });
     };
     const onChangedate = (e) => {
-        setState({ ...state, valueDate: e.target.value });
     };
     const hoadons = useSelector((state) => state.hoadons.hoadon.data);
     const songuoiconlai = (e) => {
@@ -427,19 +432,13 @@ function Tour(props) {
                                                     </td>
                                                     <td>
                                                         <span>
-                                                            {state.date === ""
-                                                                ? formatlaidate(checkngaydi())
-                                                                : state.date}
+                                                            {state.date }
                                                         </span>
                                                     </td>
                                                     <td>
-                                                        <Popover
-                                                            content={
+                                                        {/* <Popover content={
                                                                 <div>
-                                                                    <Radio.Group
-                                                                        onChange={onChangedate}
-                                                                        value={state.valueDate}
-                                                                    >
+                                                                    <Radio.Group onChange={onChangedate} value={state.valueDate}>
                                                                         {state.listdate === ""
                                                                             ? ""
                                                                             : state.listdate.map((ok) => (
@@ -486,7 +485,8 @@ function Tour(props) {
                                                             >
                                                                 Đổi ngày
                                                             </span>
-                                                        </Popover>
+                                                        </Popover> */}
+                                                         <DatePicker format={'DD/MM/YYYY'} onChange={handleDateChange}  />
                                                     </td>
                                                 </tr>
                                                 <tr>

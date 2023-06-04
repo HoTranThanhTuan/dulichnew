@@ -113,11 +113,23 @@ export default function Listtour() {
   }, []);
 
   const handleChange = (value) => {
+    console.log(value,"value")
+
     setState({
       ...state,
       check: value,
     });
   };
+  const handleChangeGia = (e) => {
+    if(e != "0,1000"){
+      if(tourtrongnuoc){
+        // tourtrongnuoc = tourtrongnuoc.filter(item => (item.gianguoilon > Number(e.split(",")[0]+"000000") && item.gianguoilon <  Number(e.split(",")[1]+"000000")))
+      }
+    } else {
+
+    }
+  }
+
   const search = (e) => {
     const { check } = state;
     if (check === "trong") {
@@ -235,15 +247,18 @@ export default function Listtour() {
             </Select>
             {state.check === "trong" ? (
               <div>
-                <h4 className="mt-3">Vùng</h4>
+                <h4 className="mt-3">Giá</h4>
                 <Select
                   className="w-100"
-                  defaultValue="trung"
+                  defaultValue="Tất cả"
                   style={{ width: 120 }}
+                  onChange={handleChangeGia}
                 >
-                  <Option value="bac">Miền Bắc</Option>
-                  <Option value="trung">Miền Trung</Option>
-                  <Option value="nam">Miền Nam</Option>
+                  <Option value="0,2">0 - 2tr</Option>
+                  <Option value="2,4">2 - 4tr</Option>
+                  <Option value="4,8">4 - 8tr</Option>
+                  <Option value="8,1000">Trên 8tr</Option>
+                  <Option value="0,1000">Tất cả</Option>
                 </Select>
               </div>
             ) : (
