@@ -14,6 +14,7 @@ import { addhoadon, hoadonData } from "../../admin/Hoadon/hoadonSlice";
 import taikhoanApi from "../../../../api/taikhoanApi";
 import { ngaydiData } from "../../admin/Ngaydi/ngaydiSlice";
 import { addthanhtoan } from "./thanhtoanSlice";
+import moment from 'moment';
 function Tour(props) {
     const { id } = useParams();
     const [state, setState] = useState({
@@ -358,6 +359,12 @@ function Tour(props) {
     if (giakhuyenmai) {
         tong = Number(nguoilon) + Number(treem) + Number(embe);
     }
+
+    const disabledDate = (current) => {
+        return current && current < moment().endOf('day');
+      };
+    
+
     return (
         <div id="detail-tour">
             <div className="breadcrumb">
@@ -486,7 +493,7 @@ function Tour(props) {
                                                                 Đổi ngày
                                                             </span>
                                                         </Popover> */}
-                                                         <DatePicker format={'DD/MM/YYYY'} onChange={handleDateChange}  />
+                                                         <DatePicker format={'DD/MM/YYYY'}  disabledDate={disabledDate} onChange={handleDateChange}  />
                                                     </td>
                                                 </tr>
                                                 <tr>
