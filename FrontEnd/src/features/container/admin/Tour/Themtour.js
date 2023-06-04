@@ -296,8 +296,9 @@ function Themtour(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const ngaydi = useSelector(state => state.ngaydis.ngaydi.data);
     const loadingngaydi = useSelector(state => state.ngaydis.loading);
-    const [ngaydiId, setngaydiId] = useState([])
+    const [ngaydiId, setngaydiId] = useState([30,35])
     const onchangeNgaydi = (e) => {
+        console.log(e,"Chọn ngày khởi hành")
         setngaydiId(e)
     }
     const showModal = () => {
@@ -363,12 +364,12 @@ function Themtour(props) {
                         </Modal>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="">Ngày đi</label>
+                        {/* <label htmlFor="">Ngày đi</label>
                         <span className="text-warning" onClick={showModal}>
                             <IconButton color="primary" className="mr-5 ml-4" aria-label="upload picture" component="span">
                                 <i className="far fa-calendar-alt" ></i>
                             </IconButton>
-                        </span>
+                        </span> */}
                         <div className="form-group">
                             <Modal title="Chọn ngày khởi hành" visible={isModalVisible} onOk={handleOk} onCancel={handleCancelModal}>
                                 <Checkbox.Group style={{ width: '100%' }} value={ngaydiId} onChange={onchangeNgaydi}>

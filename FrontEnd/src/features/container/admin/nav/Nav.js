@@ -837,7 +837,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/lienhe`}>Quản lý liên hệ</Link>
       </Menu.Item>
-      <Menu.Item
+      {/* <Menu.Item
         key="16"
         icon={
           state.collapsed === true ? (
@@ -848,7 +848,7 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/ngaydi`}>Quản lý Ngày đi</Link>
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item
         key="17"
         icon={
