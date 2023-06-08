@@ -131,13 +131,13 @@ function ListMenu(props) {
             </Menu.Item>}
         
             {users ? (
-                phanquyen() ? (
+                phanquyen() ? (users.role != "User" && (
                     <Menu.Item key="3">
                         <Linkrt to="/admin" className="nav-link">
-                            Quản lý {users.role}
+                            Quản lý{users.role}
                         </Linkrt>
                     </Menu.Item>
-                ) : (
+                )) : (
                     ""
                 )
             ) : (

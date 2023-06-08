@@ -877,7 +877,11 @@ export default function Nav() {
     </Menu>
   );
   const Menu_Authentication = (role) => {
+    console.log(role, "role")
     switch (role) {
+      case "Admin":
+        return menu_quanlyadmin;
+        break;
       case "admin":
         return menu_quanlyadmin;
         break;
@@ -893,6 +897,9 @@ export default function Nav() {
       case "admin":
         return admin;
         break;
+      case "Admin":
+          return admin;
+          break;
       case "Cộng tác viên":
         return quanlytour;
         break;
