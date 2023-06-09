@@ -120,14 +120,9 @@ export default function Listtour() {
       check: value,
     });
   };
+  const [valuePrice, setValuePrice] = useState([0, 1000000000])
   const handleChangeGia = (e) => {
-    if(e != "0,1000"){
-      if(tourtrongnuoc){
-        // tourtrongnuoc = tourtrongnuoc.filter(item => (item.gianguoilon > Number(e.split(",")[0]+"000000") && item.gianguoilon <  Number(e.split(",")[1]+"000000")))
-      }
-    } else {
-
-    }
+    setValuePrice([Number(e.split(",")[0]+"000000"), Number(e.split(",")[1]+"000000")])
   }
 
   const search = (e) => {
@@ -254,10 +249,10 @@ export default function Listtour() {
                   style={{ width: 120 }}
                   onChange={handleChangeGia}
                 >
-                  <Option value="0,2">0 - 2tr</Option>
-                  <Option value="2,4">2 - 4tr</Option>
-                  <Option value="4,8">4 - 8tr</Option>
-                  <Option value="8,1000">Trên 8tr</Option>
+                  <Option value="0,2">0 - 2.000.000 vnd</Option>
+                  <Option value="2,4">2 - 4.000.000 vnd</Option>
+                  <Option value="4,8">4 - 8.000.000 vnd</Option>
+                  <Option value="8,1000">trên 8.000.000 vnd</Option>
                   <Option value="0,1000">Tất cả</Option>
                 </Select>
               </div>
@@ -341,7 +336,7 @@ export default function Listtour() {
                 <div className="row mt-4 ">
                   {state.check === "trong"
                     ? state.statetrongnuoc === ""
-                      ? tourtrongnuoc.map((ok, index) => (
+                      ? tourtrongnuoc.filter(item => item.gianguoilon > valuePrice[0] && item.gianguoilon < valuePrice[1]).map((ok, index) => (
                           <div className="col-md-6 mb-3">
                             <Link to={`/tour/${ok.id}`}>
                               <div className="img rounded">
